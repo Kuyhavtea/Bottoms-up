@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmtpspor62sj0"]
+
+[ext_resource type="Script" uid="uid://dgyx8rx7xg38u" path="res://area_2d.gd" id="1_m5308"]
+[ext_resource type="Texture2D" uid="uid://dwf101k661lo1" path="res://items_7.png" id="2_edst3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_edst3"]
+radius = 6.0
+
+[node name="Bottle" type="Area2D"]
+z_index = 50
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_m5308")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 50
+texture_filter = 1
+position = Vector2(5.9604645e-08, -2.3841858e-07)
+scale = Vector2(1.125, 1.1249999)
+texture = ExtResource("2_edst3")
+region_enabled = true
+region_rect = Rect2(64, 0, 7, 18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visibility_layer = 33
+texture_filter = 1
+shape = SubResource("CircleShape2D_edst3")
+debug_color = Color(3.5616756e-06, 0.58392656, 0.7892446, 0.41960785)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
