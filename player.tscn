@@ -1,7 +1,8 @@
-[gd_scene load_steps=34 format=3 uid="uid://dp83t44kwi3me"]
+[gd_scene load_steps=35 format=3 uid="uid://dp83t44kwi3me"]
 
 [ext_resource type="Script" uid="uid://cxgb7u6gavedj" path="res://player.gd" id="1_4flbx"]
 [ext_resource type="Texture2D" uid="uid://bd7brmxq5l7iw" path="res://asset/animatedCharacter1_grid.png" id="2_sweqy"]
+[ext_resource type="PackedScene" uid="uid://casjioycyvxqf" path="res://enemy.tscn" id="3_hqtel"]
 [ext_resource type="PackedScene" uid="uid://dmtpspor62sj0" path="res://Bottle.tscn" id="3_i3pqv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b26j0"]
@@ -354,19 +355,19 @@ animations = [{
 radius = 15.0
 height = 64.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player", "player_attack"]]
 script = ExtResource("1_4flbx")
 bottle_scene = ExtResource("3_i3pqv")
+enemy_scene = ExtResource("3_hqtel")
 
 [node name="Anim" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(40.000008, 26)
 scale = Vector2(2.2916667, 2.2916667)
 sprite_frames = SubResource("SpriteFrames_onrkg")
-animation = &"idle_1"
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(49, 28)
+scale = Vector2(0.5, 1)
 shape = SubResource("CapsuleShape2D_onrkg")
 
 [node name="Camera2D" type="Camera2D" parent="."]

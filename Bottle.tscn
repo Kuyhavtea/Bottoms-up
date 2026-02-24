@@ -6,10 +6,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_edst3"]
 radius = 6.0
 
-[node name="Bottle" type="Area2D"]
+[node name="Bottle" type="Area2D" groups=["projectiles"]]
 z_index = 50
-collision_layer = 0
-collision_mask = 0
+collision_layer = 2
 script = ExtResource("1_m5308")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
