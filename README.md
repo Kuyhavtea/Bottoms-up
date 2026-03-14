@@ -12,4 +12,4 @@ The core experience focuses on internal conflict rather than external enemies. E
 ![alt text](screenshot/Ilovemrruslan.png)
 
 ## youtube
-https://youtu.be/pE7SLjodONU?si=o8vhUxL6lZfrXB6C
+https://youtu.be/zCz2Tq7l8P0
