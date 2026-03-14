@@ -1,7 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://cosaewwuap2l8"]
+[gd_scene load_steps=12 format=3 uid="uid://cosaewwuap2l8"]
 
 [ext_resource type="Texture2D" uid="uid://bxampnuq1xro4" path="res://asset/RepeatableStoneWall.png" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://daj7mrk6fx10y" path="res://main.gd" id="1_lquwl"]
 [ext_resource type="PackedScene" uid="uid://dp83t44kwi3me" path="res://player.tscn" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://cdf7bd6rkrodt" path="res://asset/room_4.png" id="3_h2yge"]
+[ext_resource type="Texture2D" uid="uid://bd7brmxq5l7iw" path="res://asset/animatedCharacter1_grid.png" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://cumvwxx2ltxb7" path="res://wave_manager.gd" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://casjioycyvxqf" path="res://enemy.tscn" id="7_272bh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ig7tw"]
 texture = ExtResource("1_ig7tw")
@@ -136,6 +141,7 @@ sources/1 = SubResource("TileSetAtlasSource_ig7tw")
 size = Vector2(99.25499, 0.05875051)
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_lquwl")
 
 [node name="Room" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -146,6 +152,7 @@ region_enabled = true
 region_rect = Rect2(130.538, -0.052, 128, 64)
 
 [node name="TileMap" type="TileMap" parent="."]
+z_index = -1
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(-3, 0)
@@ -167,5 +174,267 @@ position = Vector2(-20, 432.99997)
 scale = Vector2(1, 40000)
 shape = SubResource("RectangleShape2D_0xm2m")
 
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="TileMap/Ground"]
+position = Vector2(4053, 490)
+scale = Vector2(1, 40000)
+shape = SubResource("RectangleShape2D_0xm2m")
+
 [node name="Player" parent="." instance=ExtResource("2_0xm2m")]
 position = Vector2(415, 1540)
+
+[node name="mini couch 1" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(244, 1567)
+scale = Vector2(2.292, 2.292)
+texture = ExtResource("3_h2yge")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(106.421, 22.323, 38.258, 30)
+
+[node name="mini couch" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(532, 1567)
+scale = Vector2(2.292, 2.292)
+texture = ExtResource("3_h2yge")
+region_enabled = true
+region_rect = Rect2(106.421, 22.323, 38.258, 30)
+
+[node name="couch" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(814.00006, 1566.0001)
+scale = Vector2(3, 3)
+texture = ExtResource("3_h2yge")
+region_enabled = true
+region_rect = Rect2(19.751839, 17.665878, 50.539932, 23.08696)
+
+[node name="trashcan" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(628, 1580.0001)
+scale = Vector2(3, 3)
+texture = ExtResource("3_h2yge")
+region_enabled = true
+region_rect = Rect2(51.34731, 4.0413933, 22.2086, 13.587521)
+
+[node name="painting" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(462, 1511)
+scale = Vector2(3, 3)
+texture = ExtResource("3_h2yge")
+region_enabled = true
+region_rect = Rect2(20.72691, 0.4895544, 26.664051, 16.865108)
+
+[node name="mini couch 2" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(1094.548, 1567.336)
+scale = Vector2(2.292, 2.292)
+texture = ExtResource("3_h2yge")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(106.421, 22.323, 38.258, 30)
+
+[node name="mini couch2" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(1390.9999, 1562)
+scale = Vector2(2.292, 2.292)
+texture = ExtResource("3_h2yge")
+region_enabled = true
+region_rect = Rect2(106.421, 22.323, 38.258, 30)
+
+[node name="couch2" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(1750, 1565)
+scale = Vector2(3, 3)
+texture = ExtResource("3_h2yge")
+region_enabled = true
+region_rect = Rect2(19.751839, 17.665878, 50.539932, 23.08696)
+
+[node name="trashcan2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1569, 1582.0001)
+scale = Vector2(3, 3)
+texture = ExtResource("3_h2yge")
+region_enabled = true
+region_rect = Rect2(51.34731, 4.0413933, 22.2086, 13.587521)
+
+[node name="painting2" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(1246, 1488)
+rotation = -0.6126106
+scale = Vector2(2.292, 2.292)
+texture = ExtResource("3_h2yge")
+region_enabled = true
+region_rect = Rect2(20.72691, 0.4895544, 26.664051, 16.865108)
+
+[node name="mini couch 3" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(2196, 1559)
+scale = Vector2(3, 3)
+texture = ExtResource("3_h2yge")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(106.421, 22.323, 38.258, 30)
+
+[node name="mini couch3" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(3841, 1531)
+scale = Vector2(3, 3)
+texture = ExtResource("3_h2yge")
+region_enabled = true
+region_rect = Rect2(106.421, 22.323, 38.258, 30)
+
+[node name="couch3" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(3554, 1506)
+rotation = 1.2304571
+scale = Vector2(3, 3)
+texture = ExtResource("3_h2yge")
+region_enabled = true
+region_rect = Rect2(19.751839, 17.665878, 50.539932, 23.08696)
+
+[node name="trashcan3" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(2314.0002, 1589)
+rotation = 1.5707964
+scale = Vector2(3, 3)
+texture = ExtResource("3_h2yge")
+region_enabled = true
+region_rect = Rect2(57.153564, 4.2824116, 10.462158, 12.683853)
+
+[node name="painting3" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(3008, 1638.9999)
+rotation = -1.6196655
+scale = Vector2(3, 3)
+texture = ExtResource("3_h2yge")
+region_enabled = true
+region_rect = Rect2(20.72691, 0.4895544, 26.664051, 16.865108)
+
+[node name="mini couch 4" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(3256.0002, 1469.0001)
+rotation = -2.1816616
+scale = Vector2(3, 3)
+texture = ExtResource("3_h2yge")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(106.421, 22.323, 38.258, 30)
+
+[node name="mini couch4" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(2853, 1555)
+scale = Vector2(3, 3)
+texture = ExtResource("3_h2yge")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(106.421, 22.323, 38.258, 30)
+
+[node name="couch4" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(2531, 1566)
+scale = Vector2(3, 3)
+texture = ExtResource("3_h2yge")
+region_enabled = true
+region_rect = Rect2(19.751839, 17.665878, 50.539932, 23.08696)
+
+[node name="trashcan4" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(3006, 1411)
+rotation = -2.8099802
+scale = Vector2(3, 3)
+texture = ExtResource("3_h2yge")
+region_enabled = true
+region_rect = Rect2(57.11863, 4.913784, 10.287895, 12.188206)
+
+[node name="painting4" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(2347, 1473)
+rotation = -1.6057029
+scale = Vector2(3, 3)
+texture = ExtResource("3_h2yge")
+region_enabled = true
+region_rect = Rect2(20.72691, 0.4895544, 26.664051, 16.865108)
+
+[node name="paper" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(2362, 1592)
+rotation = -3.1415925
+scale = Vector2(3, 3)
+texture = ExtResource("3_h2yge")
+region_enabled = true
+region_rect = Rect2(67.6603, 13.565538, 4.877693, 3.9075413)
+
+[node name="character" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(1124, 1562.0001)
+scale = Vector2(3, 3)
+texture = ExtResource("4_1bvp3")
+region_enabled = true
+region_rect = Rect2(395.59827, 611.00995, 15.536621, 23.412903)
+
+[node name="character2" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(2523, 1552)
+scale = Vector2(3, 3)
+texture = ExtResource("4_1bvp3")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(440.04254, 590.1913, 33.45395, 20.25653)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+texture_filter = 1
+clip_contents = false
+custom_minimum_size = Vector2(1000, 800)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -300.0
+offset_right = 500.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/normal_font_size = 77
+theme_override_font_sizes/bold_font_size = 52
+bbcode_enabled = true
+text = "[center][font_size=64][b]CONTROLS[/b][/font_size]
+
+[font_size=32]
+J - Attack / Shoot
+R - Switch Stance
+SHIFT - Run
+SPACE - Jump
+[/font_size]
+
+[font_size=40][pulse freq=2.0 color=#ffffff][b]PRESS ENTER TO START[/b][/pulse][/font_size][/center]"
+
+[node name="WaveManager" type="Node2D" parent="."]
+position = Vector2(2347, 1473)
+rotation = -1.6057029
+scale = Vector2(3, 3)
+script = ExtResource("6_7mycd")
+enemy_scene = ExtResource("7_272bh")
