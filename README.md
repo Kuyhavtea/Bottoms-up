@@ -1,4 +1,4 @@
-<h1 align="center"> Last Bottle (Alpha Demo) </h1>
+<h1 align="center"> Last Bottle </h1>
 <h3 align="center"> Overview </h3>
 
 
